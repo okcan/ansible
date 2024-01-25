@@ -1,0 +1,12 @@
+---
+- name: Install SSL on Nginx
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Install SSL Certificates
+      apt:
+        name: certbot
+        state: present
+
+    - name: Obtain SSL Certificates
+      command: certbot --nginx
