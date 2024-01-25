@@ -1,0 +1,14 @@
+---
+- name: Apache Kurulumu ve Başlatma
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Apache2 Kurulumu
+      apt:
+        name: apache2
+        state: present
+
+    - name: Apache2 Başlatma
+      service:
+        name: apache2
+        state: started
