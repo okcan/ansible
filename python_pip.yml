@@ -1,0 +1,14 @@
+---
+- name: Install Python and Pip
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Python
+      apt:
+        name: python
+        state: present
+
+    - name: Install Pip
+      apt:
+        name: python-pip
+        state: present
