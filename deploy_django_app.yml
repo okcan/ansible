@@ -1,0 +1,16 @@
+---
+- name: Deploy Django Application
+  hosts: app_servers
+  become: true
+  tasks:
+    - name: Install Python and Django
+      apt:
+        name: python3 python3-pip
+        state: present
+    - name: Clone Git Repository
+      git:
+        repo: https://github.com/example/django-app.git
+        dest: /opt/django-app
+    - name: Install Requirements
+      pip:
+        requirements: /opt/django-app/requirements.txt
