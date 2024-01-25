@@ -1,0 +1,8 @@
+---
+- name: Elasticsearch and Kibana Installation
+  hosts: elasticsearch
+  become: true
+  tasks:
+    - name: Install Elasticsearch and Kibana
+      include_role:
+        name: elastic.elasticsearch
