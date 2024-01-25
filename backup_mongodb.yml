@@ -1,0 +1,7 @@
+---
+- name: Backup MongoDB
+  hosts: mongodb_servers
+  become: true
+  tasks:
+    - name: Backup MongoDB
+      command: mongodump --out /backup/{{ ansible_date_time.date }}
