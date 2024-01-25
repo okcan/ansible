@@ -1,0 +1,13 @@
+---
+- name: Install RabbitMQ
+  hosts: rabbitmq_servers
+  become: true
+  tasks:
+    - name: Install RabbitMQ
+      apt:
+        name: rabbitmq-server
+        state: present
+    - name: Start RabbitMQ
+      service:
+        name: rabbitmq-server
+        state: started
