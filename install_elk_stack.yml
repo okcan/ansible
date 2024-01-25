@@ -1,0 +1,8 @@
+---
+- name: Install Elasticsearch and Logstash
+  hosts: elk_stack_servers
+  become: true
+  tasks:
+    - name: Install Elasticsearch and Logstash
+      include_role:
+        name: elastic.elasticsearch
