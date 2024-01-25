@@ -1,0 +1,7 @@
+---
+- name: Backup Apache Configuration
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Backup Apache Config
+      command: cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.backup
