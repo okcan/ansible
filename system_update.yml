@@ -1,0 +1,15 @@
+---
+- name: System Update and Reboot
+  hosts: all
+  become: true
+  tasks:
+    - name: Update System
+      apt:
+        upgrade: yes
+        update_cache: yes
+
+    - name: Reboot
+      command: reboot
+      async: 0
+      poll: 0
+      become: true
