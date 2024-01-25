@@ -1,0 +1,20 @@
+---
+- name: Install Graylog
+  hosts: graylog_servers
+  become: true
+  tasks:
+    - name: Install Java
+      apt:
+        name: openjdk-8-jdk
+        state: present
+    - name: Install MongoDB
+      apt:
+        name: mongodb
+        state: present
+    - name: Install Elasticsearch
+      include_role:
+        name: elastic.elasticsearch
+    - name: Install Graylog
+      apt:
+        name: graylog-server
+        state: present
