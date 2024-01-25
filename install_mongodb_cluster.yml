@@ -1,0 +1,9 @@
+---
+- name: MongoDB Cluster Installation
+  hosts: mongodb_servers
+  become: true
+  tasks:
+    - name: Install MongoDB
+      apt:
+        name: mongodb
+        state: present
