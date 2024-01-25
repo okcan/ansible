@@ -1,0 +1,14 @@
+---
+- name: Deploy Java Application
+  hosts: app_servers
+  become: true
+  tasks:
+    - name: Install Java
+      apt:
+        name: openjdk-8-jdk
+        state: present
+
+    - name: Deploy Java Application
+      copy:
+        src: /path/to/java/app.jar
+        dest: /opt/app/app.jar
