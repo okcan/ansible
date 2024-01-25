@@ -1,0 +1,22 @@
+---
+- name: Install WordPress
+  hosts: web_servers
+  become: true
+  tasks:
+    - name: Install LAMP Stack
+      include_role:
+        name: geerlingguy.apache
+        tasks_from: install
+
+    - name: Download and Configure WordPress
+      get_url:
+        url: "https://wordpress.org/latest.tar.gz"
+        dest: "/var/www/html/"
+        owner: www-data
+        group: www-data
+      notify: Restart Apache
+  handlers:
+    - name: Restart Apache
+      service:
+        name: apache2
+        state: restarted
