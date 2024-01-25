@@ -1,0 +1,9 @@
+---
+- name: Clone Git Repository
+  hosts: code_servers
+  become: true
+  tasks:
+    - name: Clone Repository
+      git:
+        repo: https://github.com/example/repo.git
+        dest: /opt/repo
