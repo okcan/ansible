@@ -1,0 +1,13 @@
+---
+- name: Disk Space Check and Alert
+  hosts: servers
+  become: true
+  tasks:
+    - name: Check Disk Space
+      shell: df -h | grep '/dev/sda1' | awk '{ print $5 }'
+      register: disk_space
+
+    - name: Send Alert
+      debug:
+        msg: "Disk space is {{ disk_space.stdout }} full!"
+      when: disk_space.stdout | int > 80
