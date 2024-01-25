@@ -1,0 +1,21 @@
+---
+- name: Firewall Installation and Configuration
+  hosts: servers
+  become: true
+  tasks:
+    - name: Install UFW (Uncomplicated Firewall)
+      apt:
+        name: ufw
+        state: present
+
+    - name: Allow HTTP and HTTPS Traffic
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+      loop:
+        - 80
+        - 443
+
+    - name: Start Firewall
+      ufw:
+        state: enabled
