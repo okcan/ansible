@@ -1,0 +1,13 @@
+---
+- name: Install Jenkins
+  hosts: jenkins_servers
+  become: true
+  tasks:
+    - name: Install Java
+      apt:
+        name: openjdk-8-jdk
+        state: present
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: present
