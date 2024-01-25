@@ -1,0 +1,10 @@
+---
+- name: Set SSH Key for a User
+  hosts: servers
+  become: true
+  tasks:
+    - name: Add SSH Key
+      authorized_key:
+        user: "{{ username }}"
+        key: "{{ ssh_key }}"
+        state: present
