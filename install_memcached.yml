@@ -1,0 +1,9 @@
+---
+- name: Install Memcached
+  hosts: cache_servers
+  become: true
+  tasks:
+    - name: Install Memcached
+      apt:
+        name: memcached
+        state: present
