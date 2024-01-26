@@ -1,3 +1,19 @@
-**Ansible Playbook**
+## Overview
 
-These playbooks cover a variety of scenarios and should be adapted according to your specific requirements. Remember to adjust the inventory file to match your target systems and configurations. To execute the playbooks, use the ansible-playbook command followed by the playbook filename. For example, ansible-playbook apache.yml for the first playbook.
+Welcome to theAnsible project! 
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- [Python](https://www.python.org/downloads/)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/okcan/ansible.git
