@@ -1,0 +1,6 @@
+- name: compress all the files in tar.gz
+  archive:
+    path: /tmp/abc  			#Specify your path
+    dest: /tmp/abc/pprof.tar.gz		#Specify your compress file name
+    format: gz				#Specify compress format
+

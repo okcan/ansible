@@ -1,0 +1,4 @@
+- name: Copy a "sudoers" file on the remote machine for editing
+  fetch:
+    src: /tmp/pprof_output/pprof.tar.gz		#Specify your file to send
+    dest: /tmp/					#Specify your local path
